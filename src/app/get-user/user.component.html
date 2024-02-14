@@ -1,0 +1,43 @@
+<div class="container mt-3">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>username</th>
+          <th>password</th>
+          <th>country</th>
+          <th>phone</th>
+          <th>emailId</th>
+          <th >Action</th>
+         
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let property of users">
+            <td>{{ property.userId }}</td>
+          <td>{{ property.firstName }}</td>
+          <td>{{ property.lastName }}</td>
+          <td>{{ property.username }}</td>
+          <td>{{ property.password}}</td>
+          <td>{{ property.country}}</td>
+          <td>{{ property.phone}}</td>
+          <td>{{ property.emailId}}</td>
+          
+        <td>
+            <button class="btn btn-danger" >
+              Delete
+            </button>
+          </td>
+          <td>
+            <button class="btn btn-primary"  [routerLink]="['/update-user/', property.userId]"
+            routerLinkActive="router-link-active">
+              Update
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

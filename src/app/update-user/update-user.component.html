@@ -1,0 +1,172 @@
+<!-- <div class="container mt-3">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>symbol</th>
+        <th>currency</th>
+        <th>name</th>
+        <th>exchange</th>
+        <th>country</th>
+        <th>type</th>
+        <th >Action</th>
+       
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let property of form">
+        <td>{{ property.userId }}</td>
+        <td>{{ property.symbol }}</td>
+        <td>{{ property.currency }}</td>
+        <td>{{ property.name}}</td>
+        <td>{{ property.exchange}}</td>
+        <td>{{ property.country}}</td>
+        <td>{{ property.type}}</td>
+        
+      <td>
+          <button class="btn btn-danger" (click)="deleteItem(property.userId)">
+            Delete
+          </button>
+        </td>
+      
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+
+
+
+
+
+
+<div class="container mt-5">
+    <h2>Add User</h2>
+  
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      
+      <div class="mb-3 mt-3">
+        <label for="address" class="form-label">FirstName</label>
+        <input
+          type="firstName"
+          class="form-control"
+          id="firstName"
+          placeholder="Enter firstName"
+          formControlName="firstName"
+        />
+      </div>
+      <div
+        *ngIf="
+          form.controls['firstName'].invalid && form.controls['firstName'].touched
+        "
+      >
+        <div class="alert alert-danger">FirstName is required</div>
+      </div>
+      <div class="mb-3">
+        <label for="type" class="form-label">LastName</label>
+        <input
+          type="name"
+          class="form-control"
+          id="lastName"
+          placeholder="Enter lastName"
+          formControlName="lastName"
+        />
+      </div>
+      <div *ngIf="form.controls['lastName'].invalid && form.controls['lastName'].touched">
+        <div class="alert alert-danger">lastName is required</div>
+      </div>
+  
+      <div class="mb-3">
+        <label for="username" class="form-label">username</label>
+        <input
+          type="name"
+          class="form-control"
+          id="username"
+          placeholder="Enter username"
+          formControlName="username"
+        />
+      </div>
+      <div
+        *ngIf="
+          form.controls['username'].invalid &&
+          form.controls['username'].touched
+        "
+      >
+        <div class="alert alert-danger">username is required</div>
+      </div>
+  
+      <div class="mb-3">
+        <label for="name" class="form-label">password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          placeholder="Enter  password"
+          formControlName="password"
+        />
+      </div>
+      <div
+        *ngIf="
+          form.controls['password'].invalid && form.controls['password'].touched
+        "
+      >
+        <div class="alert alert-danger">password is required</div>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">emailId</label>
+        <input
+          type="text"
+          class="form-control"
+          id="emailId"
+          placeholder="Enter  emailId"
+          formControlName="emailId"
+        />
+      </div>
+      <div
+        *ngIf="
+          form.controls['emailId'].invalid && form.controls['emailId'].touched
+        "
+      >
+        <div class="alert alert-danger">emailId is required</div>
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">phone</label>
+        <input
+          type="text"
+          class="form-control"
+          id="phone"
+          placeholder="Enter  phone"
+          formControlName="phone"
+        />
+      </div>
+      <div
+        *ngIf="
+          form.controls['phone'].invalid && form.controls['phone'].touched
+        "
+      >
+        <div class="alert alert-danger">phone is required</div>
+      </div>
+  
+  
+      
+        <div class="col-md-6 mb-3">
+          <label for="name" class="form-label">countryName</label>
+          <input
+            type="text"
+            class="form-control"
+            id="country"
+            placeholder="Enter countryName"
+            formControlName="country"
+          />
+          <div
+            *ngIf="
+              form.controls['country'].invalid &&
+              form.controls['country'].touched
+            "
+          >
+            <div class="alert alert-danger">country Name is required</div>
+          </div>
+        </div>
+      <button type="submit" class="btn btn-primary mt-5">Update User</button>
+    </form>
+  </div>
+  

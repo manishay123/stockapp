@@ -1,0 +1,126 @@
+<div class="container mt-3">
+    <h2>Add Wishlist</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="mb-3 mt-3">
+        <label for="id" class="form-label">userId</label>
+        <input
+          type="id"
+          class="form-control"
+          id="userId"
+          placeholder="Enter userId"
+          formControlName="userId"
+        />
+      </div>
+      <div
+        *ngIf="
+          form.controls['userId'].invalid && form.controls['userId'].touched
+        "
+      >
+        <div class="alert alert-danger">id is required</div>
+      </div>
+      <div class="mb-3">
+        <label for="symbol" class="form-label">symbol</label>
+        <input
+          type="text"
+          class="form-control"
+          id="symbol"
+          placeholder="Enter symbol"
+          formControlName="symbol"
+        />
+      </div>
+      <div
+        *ngIf="
+          form.controls['symbol'].invalid && form.controls['symbol'].touched
+        "
+      >
+        <div class="alert alert-danger">symbol is required</div>
+      </div>
+      <div class="mb-3">
+        <label for="name" class="form-label">name:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          placeholder="Enter name"
+          formControlName="name"
+        />
+      </div>
+      <div
+        *ngIf="
+          form.controls['name'].invalid && form.controls['name'].touched
+        "
+      >
+        <div class="alert alert-danger">name is required</div>
+      </div>
+      <div class="mb-3">
+        <label for="currency" class="form-label">currency:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="currency"
+          placeholder="Enter currency"
+          formControlName="currency"
+        />
+      </div>
+      <div
+        *ngIf="
+          form.controls['currency'].invalid && form.controls['currency'].touched
+        "
+      >
+        <div class="alert alert-danger">currency is required</div>
+      </div>
+      <div class="mb-3">
+        <label for="exchange" class="form-label">exchange</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exchange"
+          placeholder="Enter exchange"
+          formControlName="exchange"
+        />
+      </div>
+      <div
+        *ngIf="
+          form.controls['exchange'].invalid && form.controls['exchange'].touched
+        "
+      >
+        <div class="alert alert-danger">exchange is required</div>
+      </div>
+      <div class="mb-3">
+        <label for="country" class="form-label">country:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="country"
+          placeholder="Enter country"
+          formControlName="country"
+        />
+      </div>
+      <div
+        *ngIf="
+          form.controls['country'].invalid && form.controls['country'].touched
+        "
+      >
+        <div class="alert alert-danger">country is required</div>
+      </div>
+      <div class="mb-3">
+        <label for="type" class="form-label">type</label>
+        <input
+          type="text"
+          class="form-control"
+          id="type"
+          placeholder="Enter type"
+          formControlName="type"
+        />
+      </div>
+      <div
+        *ngIf="
+          form.controls['type'].invalid && form.controls['type'].touched
+        "
+      >
+        <div class="alert alert-danger">type is required</div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  

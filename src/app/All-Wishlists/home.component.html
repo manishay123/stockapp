@@ -1,0 +1,37 @@
+
+  <div class="container mt-3">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>symbol</th>
+          <th>currency</th>
+          <th>name</th>
+          <th>exchange</th>
+          <th>country</th>
+          <th>type</th>
+          <th >Action</th>
+         
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let property of users">
+          <td>{{ property.userId }}</td>
+          <td>{{ property.symbol }}</td>
+          <td>{{ property.currency }}</td>
+          <td>{{ property.name}}</td>
+          <td>{{ property.exchange}}</td>
+          <td>{{ property.country}}</td>
+          <td>{{ property.type}}</td>
+          
+        <td>
+            <button class="btn btn-danger" (click)="deleteItem(property.userId)">
+              Delete
+            </button>
+          </td>
+        
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
